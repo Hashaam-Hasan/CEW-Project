@@ -20,6 +20,5 @@ int main() {
     curl_easy_cleanup(hnd);
     curl_slist_free_all(headers);
 
-    return 0;
 return 0;
 }
