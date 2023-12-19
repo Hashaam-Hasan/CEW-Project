@@ -7,4 +7,5 @@ applications. The project involves interacting with a free API that provides rea
 core functionalities include data retrieval, processing, analysis, and reporting.
 <br>
 Author_1-S.M Hashaam Hasan
+<br>
 Author_2-Abdul Moiz
