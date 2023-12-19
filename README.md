@@ -6,6 +6,6 @@ Construct an integrated environmental monitoring system in C, covering a range o
 applications. The project involves interacting with a free API that provides real-time environmental data. The system's
 core functionalities include data retrieval, processing, analysis, and reporting.
 <br>
-Author_1-S.M Hashaam Hasan
+Author_1 S.M Hashaam Hasan
 <br>
-Author_2-Abdul Moiz
+Author_2 Abdul Moiz
