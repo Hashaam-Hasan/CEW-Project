@@ -36,6 +36,7 @@ int findFieldValue(const char *text, const char *field, char *value, size_t valu
     }
 }
 
+<<<<<<< HEAD
 void detectAnomalies(const char *temperature, const char *precipitation, FILE *outputFile) {
     double temp = atof(temperature);
     double precip = atof(precipitation);
@@ -174,3 +175,5 @@ void processData(const char *fileContent, FILE*outputFile, char *temperature, ch
     }
 }
 }
+=======
+>>>>>>> 035bfd58eb49dae821b797134b22062834ce5e6e
