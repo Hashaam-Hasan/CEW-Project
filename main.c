@@ -125,22 +125,10 @@ int main(void) {
         fclose(outputFile);
         return 1;
     }
-
-    // Generate the report using the data
-    //generateReport(timeStr, reportTemperature, reportHumidity, reportPrecipitation, reportFile,reportpressure,reportwindDirection,reportwindSpeed,reportsevereWeather);
     generateReport(timeStr, reportTemperature, reportHumidity, reportPrecipitation, reportpressure, reportwindSpeed, reportwindDirection, reportFile);
 
     // Close the report file
     fclose(reportFile);
-
-    // main.c
-
-
-    // Call the function from the other file
-   // CURLcode result = sendgrid_patch_request("hyder8098273@gmail.com");
-
-    // Check the result and handle accordingly...
-
 
     return 0;
 

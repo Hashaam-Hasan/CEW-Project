@@ -17,14 +17,18 @@ void generateReport(const char* timeStr, const char* temperature, const char* hu
     }
 
     // Add headers and timestamp to the report
-    fprintf(outputFile, "-----------------------\n");
-    fprintf(outputFile, "Environmental Report\n");
-    fprintf(outputFile, "-----------------------\n\n");
+    fprintf(outputFile, "***************************\n");
+    fprintf(outputFile, "Final Environmental Report\n");
+    fprintf(outputFile, "***************************\n\n");
     fprintf(outputFile, "Timestamp: %s\n\n", timeStr);
 
     // Include basic environmental data in the report
     fprintf(outputFile, "Temperature: %s\n", temperature);
     fprintf(outputFile, "Humidity: %s\n", humidity);
+    fprintf(outputFile, "Precipitation: %s\n\n", precipitation);
+    fprintf(outputFile, "pressure: %s\n\n", pressure);
+    fprintf(outputFile, "windspeed: %s\n\n", windSpeed );
+    fprintf(outputFile, "wind direction: %s\n\n", windDirection);
     //fprintf(outputFile, "severe weather: %s\n\n", severeWeather);
 
     // Include anomalies detected, if any
@@ -32,6 +36,12 @@ void generateReport(const char* timeStr, const char* temperature, const char* hu
     double precip = atof(precipitation);
     if (temp > 30.0 || precip > 10.0) {
         fprintf(outputFile, "Anomalies Detected:\n");
+        fprintf(outputFile, "***********************\n");
+        fprintf(outputFile, "Temperature Anomaly: %s\n", (temp > 30.0) ? "High" : "Normal");
+        fprintf(outputFile, "Precipitation Anomaly: %s\n", (precip > 10.0) ? "High" : "Normal");
+
+        fprintf(outputFile, "***********************\n");
+    }
 
    // fclose(outputFile); // Close the report file
 
