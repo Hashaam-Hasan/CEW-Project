@@ -5,12 +5,6 @@ int findFieldValue(const char *text, const char *field, char *value, size_t valu
 
 void detectAnomalies(const char *temperature, const char *precipitation, FILE *outputFile);
 
-void processData(const char *fileContent, FILE *outputFile, char *temperature, char *humidity, char *precipitation,
-                  char *pressure, char *windSpeed, char *windDirection);
+void processData(const char *fileContent, FILE *outputFile, char *temperature, char *humidity, char *precipitation, char *pressure, char *windSpeed, char *windDirection);
 
 #endif
-
-
-
-
-
