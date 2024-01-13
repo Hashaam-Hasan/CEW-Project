@@ -17,18 +17,18 @@ void generateReport(const char* timeStr, const char* temperature, const char* hu
     }
 
     // Add headers and timestamp to the report
-    fprintf(outputFile, "***************************\n");
-    fprintf(outputFile, "Final Environmental Report\n");
-    fprintf(outputFile, "***************************\n\n");
-    fprintf(outputFile, "Timestamp: %s\n\n", timeStr);
+    fprintf(outputFile, "**********************************************\n");
+    fprintf(outputFile, "FINAL ENVIRONMENTAL REPORT\n");
+    fprintf(outputFile, "**********************************************\n\n");
+    fprintf(outputFile, "Date and Time: %s\n\n", timeStr);
 
     // Include basic environmental data in the report
-    fprintf(outputFile, "Temperature: %s\n", temperature);
-    fprintf(outputFile, "Humidity: %s\n", humidity);
-    fprintf(outputFile, "Precipitation: %s\n\n", precipitation);
-    fprintf(outputFile, "pressure: %s\n\n", pressure);
-    fprintf(outputFile, "windspeed: %s\n\n", windSpeed );
-    fprintf(outputFile, "wind direction: %s\n\n", windDirection);
+    fprintf(outputFile, "TEMPERATURE: %s\n", temperature);
+    fprintf(outputFile, "HUMIDITY: %s\n", humidity);
+    fprintf(outputFile, "PRECIPITATION: %s\n\n", precipitation);
+    fprintf(outputFile, "PRESSURE: %s\n\n", pressure);
+    fprintf(outputFile, "WINDSPEED: %s\n\n", windSpeed );
+    fprintf(outputFile, "DIRECTION OF WIND: %s\n\n", windDirection);
     //fprintf(outputFile, "severe weather: %s\n\n", severeWeather);
 
     // Include anomalies detected, if any
