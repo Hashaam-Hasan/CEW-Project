@@ -175,5 +175,3 @@ void processData(const char *fileContent, FILE*outputFile, char *temperature, ch
     }
 }
 }
-=======
->>>>>>> 035bfd58eb49dae821b797134b22062834ce5e6e
