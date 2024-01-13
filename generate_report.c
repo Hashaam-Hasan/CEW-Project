@@ -1,4 +1,4 @@
-// report_generator.c
+//generate_report.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <curl/curl.h>
