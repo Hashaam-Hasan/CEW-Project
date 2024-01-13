@@ -4,7 +4,7 @@
 #include <curl/curl.h>
 #include <time.h>
 #include <math.h>
-#include <weather_utils.h>
+#include "weather_utils.h"
 #include "generate_report.h"
 #include "send_email.h"
 
@@ -35,7 +35,7 @@ int main(void) {
         curl_easy_setopt(hnd, CURLOPT_URL, "https://weatherapi-com.p.rapidapi.com/current.json?q=24.8607%2C67.0011");
 
         struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "X-RapidAPI-Key: 353dd9c21bmsh27913df22698674p1c9bcdjsnc96f27643b02");
+        headers = curl_slist_append(headers, "X-RapidAPI-Key: 59ebf45566msh90bbd47d19191e1p129e89jsn5411c2e62214");
         headers = curl_slist_append(headers, "X-RapidAPI-Host: weatherapi-com.p.rapidapi.com");
         curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
 
@@ -125,11 +125,26 @@ int main(void) {
         fclose(outputFile);
         return 1;
     }
-    generateReport(timeStr, reportTemperature, reportHumidity, reportPrecipitation, reportpressure, reportwindSpeed, reportwindDirection, reportFile);
+
+    // Generate the report using the data
+    //generateReport(timeStr, reportTemperature, reportHumidity, reportPrecipitation, reportFile,reportpressure,reportwindDirection,reportwindSpeed,reportsevereWeather);
+    generateReport(timeStr, reportTemperature, reportHumidity, reportPrecipitation,    reportpressure, reportwindSpeed, reportwindDirection, reportFile);
 
     // Close the report file
     fclose(reportFile);
+    //detectAnomaliesFromFile("output_log.txt");
 
+    // Check the result and handle accordingly...
+    const char *to = "outlawgod101@gmail.com";
+    //const char *cc = "cc@example.com";
+    const char *file_path = "environmental_report.txt";
+
+    int result = send_email_with_attachment(to, file_path);
+
+    if (result == 0) {
+        printf("Email sent successfully!\n");
+    } else {
+        printf("Failed to send email. Error code: %d\n", result);
+    }
     return 0;
-
 }
